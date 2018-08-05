@@ -10,6 +10,11 @@ app.use(bodyParser.json());
 // create application/x-www-form-urlencoded parser
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.get('/', (req, res) => {
+    res.write('Rest Server');
+    res.end();
+});
+
 app.get('/user/:id', (req, res) => {
     const id = req.params.id;
     res.json({
